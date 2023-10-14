@@ -62,4 +62,29 @@
   border:1px solid grey;
 }
 
+#promptbars {
+  position:absolute;
+  top:9%;
+  width:150px;
+  height:100px;
+  border-radius: 5px;
+  /* border: 1px solid grey; */
+}
 
+#filecolumn {
+  display:none;
+  width:25px;
+  height:100%;
+  border: 1px solid grey;
+
+}
+#editcolumn {
+  display:none;
+}
+#viewcolumn {
+  display:none;
+}
+
+#settingscolumn {
+  display:none;
+}

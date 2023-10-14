@@ -29,6 +29,7 @@ function addInputListeners() {
   });
   initel("file").addEventListener("mousedown", () => {
     // getLine();
+    initel("filecolumn").style.display = "block";
   });
   initel("edit").addEventListener("mousedown", () => {
   });
@@ -44,9 +45,23 @@ function addInputListeners() {
       currentTab = "tab";
     }
   });
+  initel("openfile").addEventListener("change", () => {
+    const f = initel("openfile").files[0];
+    const reader = new FileReader();
+    reader.onload = (content) => {
+      const ct = content.target.result;
+      input.value = ct;
+    };
+    reader.readAsText(f);
+    displayNone("filecolumn");
+  });
 }
 
 addInputListeners();
+
+function displayNone(element) {
+  initel(element).style.display = "none";
+}
 
 function saveBuffer() {
   console.log(input.value);
